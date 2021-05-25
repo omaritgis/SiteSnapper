@@ -7,8 +7,6 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
-import javax.servlet.ServletContext;
-
 import org.apache.commons.io.FileUtils;
 //import org.testng.Assert;
 import org.openqa.selenium.OutputType;
