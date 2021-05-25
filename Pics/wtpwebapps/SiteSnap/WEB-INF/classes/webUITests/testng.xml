@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="WebUITestsFlow" verbose="1">
+	<test name="WebUITests">
+		<parameter name="browser" value="Chrome"/>
+		<parameter name="url" value="https://facebook.com"/>
+		<parameter name="name" value="testNG"/>
+		<classes>
+			<class name="webUITests.WebUITests">
+				<methods>
+					<include name="openBrowserHeadless"/>
+					<include name="navigateToURL"/>
+					<include name="takescreenshot"/>
+					<include name="closeBrowser"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="WebUITests2">
+		<parameter name="browser" value="Chrome"/>
+		<parameter name="url" value="https://facebook.com"/>
+		<parameter name="name" value="testNG"/>
+		<classes>
+			<class name="webUITests.WebUITests">
+				<methods>
+					<include name="openBrowser"/>
+					<include name="navigateToURL"/>
+					<include name="takescreenshot"/>
+					<include name="closeBrowser"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

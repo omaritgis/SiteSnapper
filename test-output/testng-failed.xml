@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [WebUITestsFlow]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="WebUITests(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="https://facebook.com"/>
+    <classes>
+      <class name="webUITests.WebUITests">
+        <methods>
+          <include name="takescreenshot"/>
+        </methods>
+      </class> <!-- webUITests.WebUITests -->
+    </classes>
+  </test> <!-- WebUITests(failed) -->
+</suite> <!-- Failed suite [WebUITestsFlow] -->

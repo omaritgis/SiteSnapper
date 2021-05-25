@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+h1 {text-align:center;}
+
+</style>
+<script>
+function sendData(){
+var input = document.getElementById("input").value;
+var input2 = input.substr(0,7).includes("https") ? "https:" : input.substr(0,7).includes("https") ?
+		"http" : input.substr(0,7).includes("https");
+//Start katalonsh, when finished:
+
+//location.href = "/SiteSnap/SiteSnapWS?link="+input;
+const request = new XMLHttpRequest();
+request.open("GET","http://localhost:8080/SiteSnap/SiteSnapWS?link="+input);
+request.send();
+request.onload = ()=>{
+	console.log(request);
+	if(request.status === 200){
+		//Requestet gick igenom
+		console.log(JSON.parse(request.response));
+		document.getElementById("output").src = request.responseText;
+	}else{
+		console.log('error ${request.status}');
+	}
+}
+//document.getElementById("output").src = "/SiteSnap/Pics/wtpwebapps/SiteSnap/Pics/"+input2+"/"+input + ".png";
+}
+</script>
+</head>
+	<meta charset="utf-8">
+	
+	<title>SiteSnap</title>
+	<body>
+		<h1>Enter your site and you will receive a screenshot of that site</h1>
+		<div id="inputDiv">
+			<h1><input id="input" type="text"></input><button type="button" onclick="sendData()">Enter</button></h1>
+		</div>
+		
+		<div id="snapDiv">
+			<img id="output" src=""></img>
+		</div>
+	</body>
+</html>
