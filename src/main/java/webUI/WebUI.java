@@ -79,6 +79,8 @@ public class WebUI {
 		ChromeOptions options = new ChromeOptions();
 		options.setHeadless(false);
 		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--remote-debugging-port=9222");
 		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 		driver.get("https://google.com");
 		driver.manage().window().maximize();
