@@ -77,7 +77,7 @@ public class WebUI {
 	
 	public static void openRemoteBrowserHeadless() throws MalformedURLException {
 		ChromeOptions options = new ChromeOptions();
-		options.setHeadless(false);
+		options.setHeadless(true);
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--remote-debugging-port=9222");
